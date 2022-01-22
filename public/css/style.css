@@ -1,0 +1,29 @@
+body {
+    font-size: 14px;
+    background-color: #fafafa;
+    color: #262626;
+}
+.form-wrap {
+    max-width: 400px;
+    width: 100%;
+    margin: 50px auto;
+}
+.form-group {
+    margin-top: 1rem;
+}
+.devise-link {
+    margin: 16px 0;
+}
+.form-group {
+    text-align: center;
+}
+.edit-profile-wrapper {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.create-form-group {
+    border: 6px 6px 6px 6px;
+}
+.edit_button {
+    display: inline-block;
+}
