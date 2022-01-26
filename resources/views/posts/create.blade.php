@@ -24,7 +24,7 @@
                             <input class="form-control" placeholder="価格" name="price" value=""/>
                         </div>
                         <div class="md-form">
-                            <input class="form-control" type="file"  placeholder="" name="attachment[]" multiple value=""  >
+                            <input class="form-control" type="file"  placeholder="" name="attachment" multiple value=""  >
                         </div>
                         <div class="form-group">
                             <textarea name="explanation" class="form-control" rows="10" placeholder="説明"></textarea>

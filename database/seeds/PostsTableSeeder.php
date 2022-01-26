@@ -16,14 +16,19 @@ class PostsTableSeeder extends Seeder
             $name = str_random(30);
             $year = str_random(30);
             $price = str_random(10);
-
+            $image = "test";
             $explanation = str_random(500);
             $data =
             [
                 'user_id' => rand(1,3),
+                'name' =>$name,
                 'year' => $year,
                 'price' => $price,
-                'image' => $image,
+                'attachment1' => $image,
+                'attachment2' => $image,
+                'attachment3' => $image,
+                'attachment4' => $image,
+                'attachment5' => $image,
                 'explanation' => $explanation,
                 'created_at' => now(),
                 'updated_at' => now(),

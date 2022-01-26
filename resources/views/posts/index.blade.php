@@ -42,11 +42,26 @@
                 <div class="mb-5">
                     {{ $post->price }}
                 </div>
-                @foreach((array)$post->attachment as $attachment)
                 <div class="mb-5">
-                    <img src="{{ $attachment->url??'' }}"/>
+                    {{ $post->attachment1 }}
+                    <img src="{{ Storage::url($post->attachment1) }}"/>
                 </div>
-                @endforeach
+                <div class="mb-5">
+                    {{ $post->attachment2 }}
+                    <img src="{{ Storage::url($post->attachment2) }}"/>
+                </div>
+                <div class="mb-5">
+                    {{ $post->attachment3 }}
+                    <img src="{{ Storage::url($post->attachment3) }}"/>
+                </div>
+                <div class="mb-5">
+                    {{ $post->attachment4 }}
+                    <img src="{{ Storage::url($post->attachment4) }}"/>
+                </div>
+                <div class="mb-5">
+                    {{ $post->attachment5 }}
+                    <img src="{{ Storage::url($post->attachment5) }}"/>
+                </div>
                 <div class="mb-5">
                     {{ $post->explanation }}
                 </div>

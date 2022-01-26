@@ -22,14 +22,38 @@ class PostsController extends Controller
     }
     public function store(PostRequest $request)
     {
-        $post = new Post;
-        $post->name = $request->name;
-        $post->year = $request->year;
-        $post->price = $request->price;
-        $post->attachment = implode(',',$request->attachment);
-        $post->explanation = $request->explanation;
-        $post->user_id = \Auth::id();
-        $post->save();
+        $attachment = $request->attachment;
+            //アップロードに成功しているか確認
+        if($request->file('attachment')->isValid())
+        if($attachment){
+            $attachmentPath = $attachment->store('public/uploads');
+        }else{
+            $attachmentPath = "";
+        }
+
+        $user = Auth::user();
+        if ($user->id) {
+            $userId = $user->id;
+        }
+
+        if (isset($user_id) && isset($attachment))
+            $post = [
+                'user_id'      => $request->user_id,
+                'name'         => $request->name,
+                'year'         => $request->year,
+                'price'        => $request->price,
+                'attachment1'  => $request->attachment1,
+                'attachment2'  => $request->attachment2,
+                'attachment3'  => $request->attachment3,
+                'attachment4'  => $request->attachment4,
+                'attachment5'  => $request->attachment5,
+                'explanation'       => $request->explanation,
+                'user_id'           => $userId,
+                'resist_date'       => date('Y-m-d H:i:s'),
+                //DBにはファイルパスを保存！！！！！！
+                'attachment'     => $attachmentPath,
+                'delete_flag'       => '',
+            ];
 
         return redirect()->route('index');
     }

@@ -19,7 +19,11 @@ class CreatePostsTable extends Migration
             $table->string('name', 30);
             $table->string('year', 30);
             $table->string('price',10);
-            $table->string('attachment');
+            $table->string('attachment1');
+            $table->string('attachment2');
+            $table->string('attachment3');
+            $table->string('attachment4');
+            $table->string('attachment5');
             $table->string('explanation',500);
             $table->timestamps();
 
