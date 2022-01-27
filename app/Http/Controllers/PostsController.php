@@ -26,7 +26,7 @@ class PostsController extends Controller
             //アップロードに成功しているか確認
 
         $attachments = ['','','','','']; // DB保存用に投稿画像保存時のパスを格納する配列を用意
-        foreach ((array)$request->file('attachments') as $index => $e) {
+        foreach ($request->file('attachments') as $index => $e) {
         $ext = $e['photo']->guessExtension(); // 拡張子を取得
         $filename = date('YmdHis') . $index .'.'. $ext; // 保存時のファイル名を決定（今回は、日時+連番を指定）
         $uploadPath = $e['photo']->storeAs('public/uploads', $filename); // 画像保存　&　保存パス取得
@@ -44,11 +44,11 @@ class PostsController extends Controller
                 'name'         => $request->name,
                 'year'         => $request->year,
                 'price'        => $request->price,
-                'attachment1'  => $attachment[0],
-                'attachment2'  => $attachment[1],
-                'attachment3'  => $attachment[2],
-                'attachment4'  => $attachment[3],
-                'attachment5'  => $attachment[4],
+                'attachment1'  => $attachments[0],
+                'attachment2'  => $attachments[1],
+                'attachment3'  => $attachments[2],
+                'attachment4'  => $attachments[3],
+                'attachment5'  => $attachments[4],
                 'explanation'       => $request->explanation,
                 'user_id'           => $userId,
                 'resist_date'       => date('Y-m-d H:i:s'),

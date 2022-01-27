@@ -27,7 +27,7 @@ class PostRequest extends FormRequest
             'name' =>'string|required|max:30',
             'year' =>'string|required|max:30',
             'price' =>'string|required|max:10',
-            'attachments' =>'min:1|max:5',
+            'attachments' =>'required',
             'attachments.*.photo' =>'file|image|mimes:jpg,bmp,png,jpeg',
             'explanation' => 'string|required|max:500',
         ];
