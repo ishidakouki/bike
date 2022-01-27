@@ -29,3 +29,8 @@ Route::get('bike/new','PostsController@index')->name('post.index');//バイク�
 Route::get('post/new','PostsController@create')->name('post.create');//バイク投稿ページ表示//
 Route::post('/','PostsController@store')->name('post.store');//バイク投稿機能//
 Route::delete('post/{id}','PostsController@delete')->name('posts.destroy');//バイク投稿削除機能//
+
+Route::post('comments', 'CommentsController@store')->name('comments.store');
+Route::get('comments/{id}/edit', 'CommentsController@edit')->name('comments.edit');
+Route::put('comments/{id}', 'CommentsController@update')->name('comments.update');
+Route::delete('comments/{id}', 'CommentsController@destroy')->name('comments.destroy');

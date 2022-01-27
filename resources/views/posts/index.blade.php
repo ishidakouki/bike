@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="col-md-8 col-md-2 mx-auto">
-  エラー表示
+  @if(session('error'))
+       <p class="alert alert-danger">{{ session('error') }}<p>
+  @endif
+
+  @include('commons.error_messages')
 </div>
 
 @foreach ($posts as $post)
@@ -28,8 +32,7 @@
                     <form class="edit_button" method="post" action="{{ route('posts.destroy', $post->id )}}" accept-charset="UTF-8">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-size btn-danger" rel="nofollow" >
-                            <i class="far fa-trash-alt"></i>削除</button>
+                        <button type="submit" class="btn btn-size btn-danger" rel="nofollow" ><i class="far fa-trash-alt"></i>削除</button>
                     </form>
                 </div>
 
