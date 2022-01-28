@@ -38,8 +38,8 @@ class PostsController extends Controller
             $userId = $user->id;
         }
 
-        if (isset($user_id) && isset($attachment))
-            $post = [
+        if (isset($user_id) && isset($attachment)){
+            $post  = [
                 'user_id'      => $request->user_id,
                 'name'         => $request->name,
                 'year'         => $request->year,
@@ -56,8 +56,9 @@ class PostsController extends Controller
                 'attachment'     => $attachmentPath,
                 'delete_flag'       => '',
             ];
+            $post->save();
 
-        return redirect()->route('index');
+            return redirect()->route('index');}
     }
     public function delete($id)
     {
